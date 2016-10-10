@@ -1,0 +1,52 @@
+
+body {
+  background: url(http://i.imgur.com/veQ5GC3.png?2) center center fixed;
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px solid;
+  color: purple;
+  font-family: 'Londrina Shadow', cursive;
+}
+
+h1 {
+  text-align: center;
+  font-size: 35px;
+  font-family: 'Slackey';
+  color: yellow;
+}
+
+input {
+  border: 2px solid orange;
+  height: 30px;
+  background-color: white;
+  color: green;
+  font-size: large;
+ }
+
+.display {
+  text-align: center;
+}
+
+.abc {
+  text-align: center;
+  font-size: larger;
+}
+
+h3 {
+  text-align: center;
+  font-size: 15px;
+  color: brown;
+  font-family: 'Londrina Shadow';
+}
+
+footer {
+  font-size: 30px;
+  font-family: 'helvetica';
+  text-align: center;
+}
+
+
+
+
