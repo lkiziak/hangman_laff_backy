@@ -17,9 +17,9 @@
 var words = ["apple", "monkey", "car", "school", "house"];
 var spanWords = ["manzana", "mono", "carro", "escuela", "casa"];
 var newWordBlanks = "";
-var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var guessLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var word = {};
-// var guessLetter =
+
 
 // takes a random word, sets it to my word object, and saves the index in that
 // word object, as well
@@ -31,15 +31,28 @@ function chooseWord() {
 }
 
 function newWordBlanks (word) {
-  var blanks = ""
+  var blanks = "";
   for (var i = 0; i < word.length; i++) {
     blanks += '_ '
   }
   return blanks
 }
 
+//guess letters
+function guessLetters () {
+var letters = [];
+  if (guess === null) {
+    break;
+  } else if (guess.length != 1) {
+    alert("Try again.");
+  } else {
+    for (var j = 0; j < word.length; j++);
+      if (words[j] === guess) {
+        blanks[j] === guess;
+     }
+    }
+}
 
-// function guessLetter()
 
 
 
