@@ -65,9 +65,7 @@ $('.display').on('click', function(e) {
   console.log(e.target.value);
 })
 
-$("#new").submit(function(event) {
-  alert("New Game!");
-});
+
 
 
 
