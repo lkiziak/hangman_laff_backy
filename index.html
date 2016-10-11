@@ -3,6 +3,7 @@
 <head>
   <title>Laff Backy</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script   src="http://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -10,8 +11,8 @@
   <h1>Spelling Bee Challenge</h1>
   <br>
 
-  <div class="display">
-    <h4 type="text" id="english">----</h4>
+  <div class="display-container">
+    <h4 type="text" class="display" id="english">----</h4>
   </div>
 
   <div class="abc">
@@ -59,9 +60,9 @@
   <br>
 
     <footer>
-        <input type="button" id="play"   value="Play" onclick="chooseword">
-        <input type="button" id="new"    value="New Game" onclick="newgame">
-        <input type="button" id="clear"  value="Clear Game" onclick="clear">
+        <input type="button" id="play"   class="operator" value="Play">
+        <input type="button" id="new"    class="operator" value="New Game">
+        <input type="button" id="clear"  class="operator"  value="Clear">
     </footer>
 
   <script type="text/javascript" src="./js/main.js"></script>
