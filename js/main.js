@@ -18,7 +18,6 @@
 
 var words = ["apple", "monkey", "car", "school", "house"];
 var spanWords = ["manzana", "mono", "carro", "escuela", "casa"];
-var newWordBlanks = "";
 var guessLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var word = {};
 var $display = $("#display");
@@ -34,20 +33,37 @@ function chooseWord() {
   var index = Math.floor(Math.random()*words.length);
   word.index = index;
   word.english = words[index];
+  word.spanish = spanWords[index];
   console.log(word);
+  return(word);
 }
 
-function newWordBlanks (word) {
-  var blanks = "";
-  for (var i = 0; i < word.length; i++) {
-    blanks += '_ '
+function makeNewWordBlanks(word) {
+  $('#english').html("");
+  for (var i = 0; i < word.english.length; i++) {
+    var letter = document.createElement('span');
+    letter.innerHTML = '_ ';
+    letter.className = "english-letter";
+    letter.char = word.english[i];
+    console.log(letter, letter.char);
+    $('#english').append(letter);
   }
-  return blanks
 }
 
 $('.letter').on('click', function(e) {
   console.log(e.target.value);
-})
+  var charLetter = e.target.value,
+      lettersArray = $('.english-letter');
+      console.log(lettersArray);
+  for (var i = 0; i < word.english.length; i++) {
+//step 1- check word letter 'i' vs. lettersArray 'i'
+if (charLetter === lettersArray[i].char.toUpperCase()) {
+  $(lettersArray[i]).html(lettersArray[i].char);
+}
+//check if successful then change lettersArray 'i' html
+  }
+//if no more blank letters end game
+});
 
 $('#clear').on('click', function(e) {
   console.log(e.target.value);
@@ -65,6 +81,7 @@ $('.display').on('click', function(e) {
   console.log(e.target.value);
 })
 
+makeNewWordBlanks(chooseWord());
 
 
 
