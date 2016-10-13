@@ -54,6 +54,7 @@ function add() {
 }
 
 
+
 function playGame() {
   var correct = true;
   for (var i = 0; i < word.english.length; i++) {
@@ -109,7 +110,7 @@ $('.letter').on('click', function(e) {
   console.log(guess);
    playGame();
 
-   //if no more blank letters end game
+   //if no more blank letters end game - you win
 });
 
 
@@ -129,18 +130,15 @@ $('.letter').on('click', function(e) {
 //$('#clear').on('click', function(e) {
 //  console.log(e.target.value);
 //})
-
 //var $clear = $("#clear");
 //$('#play').on('click', function(e) {
   //console.log(e.target.value);
 //})
-
 //function playGame() {
 //var $play = $("#play");
 //$('#play').on('click', function(e) {
 //  console.log(e.target.value);
 //})
-
 //HTML click function:   onclick="window.location.reload()"
 
 
