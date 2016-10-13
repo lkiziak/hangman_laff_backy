@@ -19,7 +19,7 @@ h2 {
   font-family: 'Londrina Shadow', cursive;
   margin-top: 30px;
   margin-bottom: 20px;
-  text-shadow: #900 1px 0px 0px;
+  text-shadow: #900 1px .5px 0px;
 }
 
 h1 {

@@ -20,6 +20,12 @@
 //$('#play').on('click', function(e) {
   //console.log(e.target.value);
 //})
+//function playGame() {
+//var $play = $("#play");
+//$('#play').on('click', function(e) {
+//  console.log(e.target.value);
+//})
+//onclick="window.location.reload()"
 
 
 
@@ -27,11 +33,12 @@ var words = ["apple", "monkey", "car", "school", "house", "cat", "boat", "bear",
 var spanWords = ["manzana", "mono", "carro", "escuela", "casa", "gato", "barco", "oso", "hormiga"];
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var word = {};
-var $newGame = $("#new");
+var $startGame = $("#start");
 var img = ["http://i.imgur.com/H99R7c2.png", "http://i.imgur.com/3srMXwg.png", "http://i.imgur.com/A1algeB.png", "http://i.imgur.com/PB6Vut3.png", "http://i.imgur.com/jpMAWFH.png", "http://i.imgur.com/Vjctm0x.png"];
 var counter = 0; //count correct guesses
 var guesses = 0;
 var guess = '';
+
 
 
 // takes a random word, sets it to my word object, and saves the index in that
@@ -45,6 +52,7 @@ function chooseWord() {
   makeNewWordBlanks(word);
   return word;
 }
+
 
 function chooseSrc() {
   var index = Math.floor(Math.random()*img.length);
@@ -65,9 +73,8 @@ function playGame() {
       if (guess[i] != word.english[i]) {
         correct = false;
   }}
-
-  debugger;
-  if (correct === true) {
+debugger;
+    if (correct === true) {
     $('.img').css('background-image', "url(" + pic + ")");
   }
 }
@@ -110,25 +117,10 @@ $('.letter').on('click', function(e) {
 //check if successful then change lettersArray 'i' html
   }
   console.log(guess);
+
   playGame();
 //if no more blank letters end game
 });
-
-$('#new').on('click', function(e) {
-  console.log(e.target.value);
-})
-
-
-//reset game when player presses new game button
-var reset = function () {
-
-}
-
-
-
-
-
-
 
 
 
