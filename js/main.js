@@ -24,6 +24,7 @@ var $newGame = $("#new");
 var img = ["http://i.imgur.com/H99R7c2.png", "http://i.imgur.com/3srMXwg.png", "http://i.imgur.com/A1algeB.png", "http://i.imgur.com/PB6Vut3.png", "http://i.imgur.com/jpMAWFH.png", "http://i.imgur.com/Vjctm0x.png"];
 var counter = 0; //count correct guesses
 var guesses = 0;
+var guess = '';
 
 
 // takes a random word, sets it to my word object, and saves the index in that
@@ -44,7 +45,7 @@ function chooseSrc() {
   return img[index];
 }
 
-chooseSrc();
+var pic = chooseSrc();
 chooseWord();
 
 function add() {
@@ -52,16 +53,17 @@ function add() {
 }
 
 
-//var guess;
-var guessCnt = 4;
-var player = { correct: [], incorrect: []};
-for (var i = 0; i < letters.length; i++) {
-    if (player.correct.length === letters.length) {
-     $('img').append();
-    } else if (player.incorrect.length >= 4) {
-        alert('Game Over');
-  }
-}
+//var guessCnt = 4;
+function newGame() {
+var correct = true;
+for (var i = 0; i < word.english.length; i++) {
+    if (guess[i] != word.english[i]) {
+      correct = false;
+}}
+
+if (correct === true) {
+  $('.img').css('background-image', "url(" + pic + ")");
+}}
 
 
 function makeNewWordBlanks(word) {
@@ -73,6 +75,7 @@ function makeNewWordBlanks(word) {
     letter.char = word.english[i];
     console.log(letter, letter.char);
     $('#english').append(letter);
+    guess += '_';
   }
 }
 
@@ -91,28 +94,37 @@ $('.letter').on('click', function(e) {
       //push to player.correct
       $(lettersArray[i]).html(lettersArray[i].char);
       add();
-    }
+    guess = guess.substr(0, i) + $(lettersArray[i]).html() + guess.substr(i + 1);
+  }
+
     // console.log("in loop");
     // else unsucessful, then we need to add to the misses array
     // create logic for when misses get to a certain point, we end the game
 //check if successful then change lettersArray 'i' html
   }
+  console.log(guess);
+  newGame();
 //if no more blank letters end game
 });
 
 
-
-$('#clear').on('click', function(e) {
-  console.log(e.target.value);
-})
+//reset game when player presses new game button
 
 $('#new').on('click', function(e) {
   console.log(e.target.value);
 })
 
-$('.display').on('click', function(e) {
-  console.log(e.target.value);
-})
+var reset = function () {
+
+}
+
+//$('#clear').on('click', function(e) {
+//  console.log(e.target.value);
+//})
+
+//$('.display').on('click', function(e) {
+  //console.log(e.target.value);
+//})
 
 
 
