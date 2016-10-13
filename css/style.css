@@ -4,7 +4,7 @@ body {
 }
 
 .img {
-  width: 240px;
+  width: 250px;
   height: 220px;
   background-size: contain;
   background-repeat: no-repeat;
@@ -27,7 +27,7 @@ h1 {
   font-size: 40px;
   font-family: 'Slackey';
   color: yellow;
-  text-shadow: #039 3px 1px 5px;
+  text-shadow: #039 3px 2px 5px;
 }
 
 h4 {
@@ -56,8 +56,15 @@ input {
 
 h3 {
   text-align: center;
-  font-size: 15px;
+  font-size: 20px;
   color: brown;
+  font-family: 'Londrina Shadow';
+}
+
+#spanish {
+  text-align: center;
+  color: blue;
+  font-size: 30px;
   font-family: 'Londrina Shadow';
 }
 

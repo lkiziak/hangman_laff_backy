@@ -11,26 +11,11 @@
 // FUNCTION: for (var i = 0; i < words[i].length; i++) {
 //   $('#english').text('_ ');
 // }
-//For Extra buttons if clear and play buttons in html are added
-//var $display = $("#display");
-//$('#clear').on('click', function(e) {
-//  console.log(e.target.value);
-//})
-//var $clear = $("#clear");
-//$('#play').on('click', function(e) {
-  //console.log(e.target.value);
-//})
-//function playGame() {
-//var $play = $("#play");
-//$('#play').on('click', function(e) {
-//  console.log(e.target.value);
-//})
-//onclick="window.location.reload()"
 
 
 
-var words = ["apple", "monkey", "car", "school", "house", "cat", "boat", "bear", "ant"];
-var spanWords = ["manzana", "mono", "carro", "escuela", "casa", "gato", "barco", "oso", "hormiga"];
+var words = ["apple", "monkey", "cat", "bear", "ant", "giraffe", "elephant", "porcupine"];
+var spanWords = ["manzana", "mono", "gato", "oso", "hormiga", "jirafa", "elefante", "puerco_espin"];
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var word = {};
 var $startGame = $("#start");
@@ -63,9 +48,11 @@ function chooseSrc() {
 var pic = chooseSrc();
 chooseWord();
 
+
 function add() {
   counter +=1;
 }
+
 
 function playGame() {
   var correct = true;
@@ -73,11 +60,13 @@ function playGame() {
       if (guess[i] != word.english[i]) {
         correct = false;
   }}
-debugger;
+//debugger;
     if (correct === true) {
     $('.img').css('background-image', "url(" + pic + ")");
+    $("#spanish").val(word.spanish);
   }
 }
+
 
 
 function makeNewWordBlanks(word) {
@@ -92,6 +81,8 @@ function makeNewWordBlanks(word) {
     guess += '_';
   }
 }
+
+
 
 $('.letter').on('click', function(e) {
   //console.log(e.target.value);
@@ -110,20 +101,46 @@ $('.letter').on('click', function(e) {
       add();
     guess = guess.substr(0, i) + $(lettersArray[i]).html() + guess.substr(i + 1);
   }
-
     // console.log("in loop");
     // else unsucessful, then we need to add to the misses array
     // create logic for when misses get to a certain point, we end the game
 //check if successful then change lettersArray 'i' html
   }
   console.log(guess);
+   playGame();
 
-  playGame();
-//if no more blank letters end game
+   //if no more blank letters end game
 });
 
 
 
 
+
+
+
+
+
+
+
+
+
+//For Extra buttons if clear and play buttons in html are added
+//var $display = $("#display");
+//$('#clear').on('click', function(e) {
+//  console.log(e.target.value);
+//})
+
+//var $clear = $("#clear");
+//$('#play').on('click', function(e) {
+  //console.log(e.target.value);
+//})
+
+//function playGame() {
+//var $play = $("#play");
+//$('#play').on('click', function(e) {
+//  console.log(e.target.value);
+//})
+
+//HTML click function:   onclick="window.location.reload()"
 
 
