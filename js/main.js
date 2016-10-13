@@ -1,3 +1,4 @@
+//NOTES:
 //setup initial state variables - variables defined
 //var wordIndex;
 //function randomIndex() {
@@ -10,16 +11,22 @@
 // FUNCTION: for (var i = 0; i < words[i].length; i++) {
 //   $('#english').text('_ ');
 // }
-//function for letters to come up on screen
-//have operting buttons function on screen
+//For Extra buttons if clear and play buttons in html are added
+//var $display = $("#display");
+//$('#clear').on('click', function(e) {
+//  console.log(e.target.value);
+//})
+//var $clear = $("#clear");
+//$('#play').on('click', function(e) {
+  //console.log(e.target.value);
+//})
 
 
-var words = ["apple", "monkey", "car", "school", "house"];
-var spanWords = ["manzana", "mono", "carro", "escuela", "casa"];
+
+var words = ["apple", "monkey", "car", "school", "house", "cat", "boat", "bear", "ant"];
+var spanWords = ["manzana", "mono", "carro", "escuela", "casa", "gato", "barco", "oso", "hormiga"];
 var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var word = {};
-var $display = $("#display");
-var $clear = $("#clear");
 var $newGame = $("#new");
 var img = ["http://i.imgur.com/H99R7c2.png", "http://i.imgur.com/3srMXwg.png", "http://i.imgur.com/A1algeB.png", "http://i.imgur.com/PB6Vut3.png", "http://i.imgur.com/jpMAWFH.png", "http://i.imgur.com/Vjctm0x.png"];
 var counter = 0; //count correct guesses
@@ -52,18 +59,18 @@ function add() {
   counter +=1;
 }
 
+function playGame() {
+  var correct = true;
+  for (var i = 0; i < word.english.length; i++) {
+      if (guess[i] != word.english[i]) {
+        correct = false;
+  }}
 
-//var guessCnt = 4;
-function newGame() {
-var correct = true;
-for (var i = 0; i < word.english.length; i++) {
-    if (guess[i] != word.english[i]) {
-      correct = false;
-}}
-
-if (correct === true) {
-  $('.img').css('background-image', "url(" + pic + ")");
-}}
+  debugger;
+  if (correct === true) {
+    $('.img').css('background-image', "url(" + pic + ")");
+  }
+}
 
 
 function makeNewWordBlanks(word) {
@@ -103,28 +110,24 @@ $('.letter').on('click', function(e) {
 //check if successful then change lettersArray 'i' html
   }
   console.log(guess);
-  newGame();
+  playGame();
 //if no more blank letters end game
 });
-
-
-//reset game when player presses new game button
 
 $('#new').on('click', function(e) {
   console.log(e.target.value);
 })
 
+
+//reset game when player presses new game button
 var reset = function () {
 
 }
 
-//$('#clear').on('click', function(e) {
-//  console.log(e.target.value);
-//})
 
-//$('.display').on('click', function(e) {
-  //console.log(e.target.value);
-//})
+
+
+
 
 
 
